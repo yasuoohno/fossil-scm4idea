@@ -1,6 +1,6 @@
 <idea-plugin>
   <id>fossil-scm4idea</id>
-  <name>Fossil Integration</name>
+  <name>Fossil-SCM Integration</name>
   <version>0.0.1</version>
   <vendor url="https://github.com/yasuoohno/fossil-scm4idea" email="yasuo.ohno@gmail.com">Yasuo Ono</vendor>
   <description><![CDATA[
