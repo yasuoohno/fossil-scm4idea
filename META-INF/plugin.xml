@@ -1,8 +1,8 @@
 <idea-plugin>
-  <id>fossil4idea</id>
+  <id>fossil-scm4idea</id>
   <name>Fossil Integration</name>
   <version>0.0.1</version>
-  <vendor url="https://github.com/yasuoohno/fossil4idea" email="yasuo.ohno@gmail.com">Yasuo Ono</vendor>
+  <vendor url="https://github.com/yasuoohno/fossil-scm4idea" email="yasuo.ohno@gmail.com">Yasuo Ono</vendor>
   <description><![CDATA[
       Allows working with <a href='http://www.fossil-scm.org/'>Fossil</a> - open-source distributed version control.
 
