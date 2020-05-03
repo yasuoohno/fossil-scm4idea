@@ -31,7 +31,7 @@ public class RunUIAction extends AnAction {
     if (project == null) return;
     final UiManager uiManager = FossilVcs.getInstance(project).getUiManager();
     if (uiManager.isRun()) {
-      e.getPresentation().setText("Stop Web UI server");
+      e.getPresentation().setText("Stop Web UI Server");
     } else {
       e.getPresentation().setText("Run Web UI");
     }

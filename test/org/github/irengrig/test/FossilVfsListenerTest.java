@@ -24,7 +24,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -36,7 +37,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -50,7 +52,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     deleteFileInCommand(myProject, file);
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeDel = myChangeListManager.getChange(delFilePath);
     Assert.assertNotNull(changeDel);
     Assert.assertTrue(FileStatus.DELETED.equals(changeDel.getFileStatus()));
@@ -62,7 +65,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -78,7 +82,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     Assert.assertTrue(file != null && file.isValid() && newName.equals(file.getName()));
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeRenamed = myChangeListManager.getChange(file);
     Assert.assertNotNull(changeRenamed);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeRenamed.getFileStatus()));
@@ -91,7 +96,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -107,7 +113,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     Assert.assertTrue(file != null && file.isValid());
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeRenamed = myChangeListManager.getChange(file);
     Assert.assertNotNull(changeRenamed);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeRenamed.getFileStatus()));
@@ -121,7 +128,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand(dir, "a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -135,7 +143,8 @@ public class FossilVfsListenerTest extends BaseFossilTest {
     Assert.assertTrue(file != null && file.isValid());
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeRenamed = myChangeListManager.getChange(file);
 //    Assert.assertNotNull(changeRenamed);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeRenamed.getFileStatus()));

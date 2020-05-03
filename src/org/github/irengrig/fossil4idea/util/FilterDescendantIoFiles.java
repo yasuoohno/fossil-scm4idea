@@ -21,7 +21,7 @@ public class FilterDescendantIoFiles extends AbstractFilterChildren<File> {
   }
 
   @Override
-  protected void sortAscending(final List<File> list) {
+  protected void sortAscending(final List<? extends File> list) {
     Collections.sort(list);
   }
 

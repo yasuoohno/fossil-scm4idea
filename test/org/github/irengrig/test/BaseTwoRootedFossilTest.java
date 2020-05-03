@@ -252,7 +252,8 @@ public class BaseTwoRootedFossilTest {
 
   protected void assertNoLocalChanges() {
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final List<LocalChangeList> changeListsCopy = myChangeListManager.getChangeListsCopy();
     int cnt = 0;
     for (LocalChangeList localChangeList : changeListsCopy) {

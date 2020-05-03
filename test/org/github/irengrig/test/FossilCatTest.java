@@ -29,7 +29,8 @@ public class FossilCatTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -42,7 +43,8 @@ public class FossilCatTest extends BaseFossilTest {
     editFileInCommand(myProject, file, newContent);
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeEdit = myChangeListManager.getChange(file);
     Assert.assertNotNull(changeEdit);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeEdit.getFileStatus()));
@@ -61,7 +63,8 @@ public class FossilCatTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));

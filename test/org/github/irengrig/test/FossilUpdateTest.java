@@ -51,7 +51,8 @@ public class FossilUpdateTest extends BaseTwoRootedFossilTest {
     final VirtualFile fileE = createFileInCommand("edit.txt", "111");
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Collection<Change> allChanges = myChangeListManager.getAllChanges();
 
     final List<VcsException> commit = myVcs.getCheckinEnvironment().commit(new ArrayList<Change>(allChanges), "***");
@@ -66,7 +67,8 @@ public class FossilUpdateTest extends BaseTwoRootedFossilTest {
 
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -89,7 +91,8 @@ public class FossilUpdateTest extends BaseTwoRootedFossilTest {
     final VirtualFile fileE = createFileInCommand("edit.txt", "111");
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Collection<Change> allChanges = myChangeListManager.getAllChanges();
 
     final List<VcsException> commit = myVcs.getCheckinEnvironment().commit(new ArrayList<Change>(allChanges), "***");
@@ -109,7 +112,8 @@ public class FossilUpdateTest extends BaseTwoRootedFossilTest {
 
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));

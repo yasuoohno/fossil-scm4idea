@@ -56,7 +56,7 @@ public class FossilVfsListener extends VcsVFSListener {
       }));
       VcsFileUtil.markFilesDirty(myProject, ObjectsConvertor.vf2fp(FossilUtils.ensureList(addedFiles)));
     } catch (VcsException e) {
-      myExceptions.add(e);
+      myProcessor.addException(e);
     }
   }
 
@@ -81,7 +81,7 @@ public class FossilVfsListener extends VcsVFSListener {
       AddUtil.deleteImpl(myProject, ObjectsConvertor.convert(filesToDelete, FossilUtils.FILE_PATH_FILE_CONVERTOR));
       VcsFileUtil.markFilesDirty(myProject, filesToDelete);
     } catch (VcsException e) {
-      myExceptions.add(e);
+      myProcessor.addException(e);
     }
   }
 
@@ -108,7 +108,7 @@ public class FossilVfsListener extends VcsVFSListener {
         }
       }
     } catch (VcsException e) {
-      myExceptions.add(e);
+      myProcessor.addException(e);
     }
   }
 

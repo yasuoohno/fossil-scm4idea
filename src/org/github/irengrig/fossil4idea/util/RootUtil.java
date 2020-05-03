@@ -25,6 +25,16 @@ import java.util.Map;
  */
 public class RootUtil {
   private final static String ourCheckoutFileName = "_FOSSIL_";
+  private final static String newCheckoutFileName = ".fslckout";
+
+  private static boolean isCheckoutFile(final String filename) {
+    return ourCheckoutFileName.equals(filename) || newCheckoutFileName.equals(filename);
+  }
+
+  private static boolean hasCheckoutFile(final VirtualFile virtualFile) {
+    return virtualFile.findChild(ourCheckoutFileName) != null ||
+            virtualFile.findChild(newCheckoutFileName) != null;
+  }
 
   public static List<VirtualFile> getFossilRoots(final VirtualFile[] roots) {
     if (roots == null || roots.length == 0) return Collections.emptyList();
@@ -34,7 +44,7 @@ public class RootUtil {
           new Processor<VirtualFile>() {
             @Override
             public boolean process(final VirtualFile virtualFile) {
-              if (ourCheckoutFileName.equals(virtualFile.getName())) {
+              if (isCheckoutFile(virtualFile.getName())) {
                 result.add(virtualFile.getParent());
               }
               return true;
@@ -50,7 +60,7 @@ public class RootUtil {
     VirtualFile virtualFile = lfs.refreshAndFindFileByIoFile(current);
     while (current != null) {
       if (virtualFile != null) {
-        if (virtualFile.findChild(ourCheckoutFileName) != null) return new File(virtualFile.getPath());
+        if (hasCheckoutFile(virtualFile)) return new File(virtualFile.getPath());
         virtualFile = virtualFile.getParent();
       } else {
         current = current.getParentFile();

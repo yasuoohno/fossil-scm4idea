@@ -29,7 +29,8 @@ public class FossilHistoryTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", wasText);
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -44,7 +45,8 @@ public class FossilHistoryTest extends BaseFossilTest {
 
     editFileInCommand(myProject, file, "222");
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change2 = myChangeListManager.getChange(file);
     Assert.assertNotNull(change2);
     Assert.assertTrue(FileStatus.MODIFIED.equals(change2.getFileStatus()));

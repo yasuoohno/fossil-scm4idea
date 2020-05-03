@@ -23,7 +23,7 @@ import com.intellij.testFramework.fixtures.TempDirTestFixture;
 import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import com.intellij.util.PlatformUtils;
 import com.intellij.util.ui.UIUtil;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.jetbrains.annotations.Nullable;
 import org.github.irengrig.fossil4idea.FossilConfiguration;
 import org.github.irengrig.fossil4idea.FossilVcs;
@@ -39,7 +39,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-import static junit.framework.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -230,7 +230,8 @@ public class BaseFossilTest {
 
   protected void assertNoLocalChanges() {
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final List<LocalChangeList> changeListsCopy = myChangeListManager.getChangeListsCopy();
     int cnt = 0;
     for (LocalChangeList localChangeList : changeListsCopy) {

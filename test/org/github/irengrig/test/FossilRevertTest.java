@@ -32,7 +32,8 @@ public class FossilRevertTest extends BaseFossilTest {
     final VirtualFile fileB = createFileInCommand("b with space.txt", "1112");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeA = assertChangeIsAdded(fileA);
     final Change changeB = assertChangeIsAdded(fileB);
 
@@ -49,7 +50,8 @@ public class FossilRevertTest extends BaseFossilTest {
     editFileInCommand(myProject, fileB, "747474");
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeC = assertChangeIsAdded(fileC);
     final Change changeModified = myChangeListManager.getChange(fileB);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeModified.getFileStatus()));
@@ -78,7 +80,8 @@ public class FossilRevertTest extends BaseFossilTest {
     final VirtualFile fileB = createFileInCommand("b with space.txt", "1112");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeA = assertChangeIsAdded(fileA);
     final Change changeB = assertChangeIsAdded(fileB);
 

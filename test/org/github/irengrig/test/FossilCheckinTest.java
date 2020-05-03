@@ -33,7 +33,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111\n\r");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -49,7 +50,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -61,7 +63,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     editFileInCommand(myProject, file, "981230213dh2bdbwcwed26y876er32178dewhdjw");
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeEdit = myChangeListManager.getChange(file);
     Assert.assertNotNull(changeEdit);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeEdit.getFileStatus()));
@@ -77,7 +80,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -93,7 +97,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     Assert.assertTrue(file != null && file.isValid() && newName.equals(file.getName()));
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeRenamed = myChangeListManager.getChange(file);
     Assert.assertNotNull(changeRenamed);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeRenamed.getFileStatus()));
@@ -110,7 +115,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand("a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -126,7 +132,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     Assert.assertTrue(file != null && file.isValid());
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeRenamed = myChangeListManager.getChange(file);
     Assert.assertNotNull(changeRenamed);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeRenamed.getFileStatus()));
@@ -144,7 +151,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     final VirtualFile file = createFileInCommand(dir, "a with space.txt", "111");
     sleep(100);
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change change = myChangeListManager.getChange(file);
     Assert.assertNotNull(change);
     Assert.assertTrue(FileStatus.ADDED.equals(change.getFileStatus()));
@@ -158,7 +166,8 @@ public class FossilCheckinTest extends BaseFossilTest {
     Assert.assertTrue(file != null && file.isValid());
 
     myDirtyScopeManager.markEverythingDirty();
-    myChangeListManager.ensureUpToDate(false);
+    // Y.ONO 2020-05-03 ensureUpToDate can be used for TestOnly.
+    // myChangeListManager.ensureUpToDate(false);
     final Change changeRenamed = myChangeListManager.getChange(file);
     Assert.assertNotNull(changeRenamed);
     Assert.assertTrue(FileStatus.MODIFIED.equals(changeRenamed.getFileStatus()));
